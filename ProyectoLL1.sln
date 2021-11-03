@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "LL1.GUI", "LL1.GUI\LL1.GUI.pyproj", "{3DA4A8D4-F80D-444A-9AA7-0756CCABB255}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.Plataforma", "1.Plataforma", "{D332765A-9A61-437D-BFCD-D9436E4F0409}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.1 Vista", "1.1 Vista", "{1154D2FE-F294-47FF-990A-53BE82A393F9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.2 Logica", "1.2 Logica", "{CE058F0F-7057-46A2-80C8-6B625C494E37}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.3 Datos", "1.3 Datos", "{44B70031-4111-4919-8298-F6D1516CC21B}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "AccesoDeDatos", "AccesoDeDatos\AccesoDeDatos.pyproj", "{7293E4A2-FF2A-42A2-988E-B12EE3ECFDBB}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "LogicaNegocio", "LogicaNegocio\LogicaNegocio.pyproj", "{8CBC1200-966E-44D6-8FA6-9EB2497D548F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3DA4A8D4-F80D-444A-9AA7-0756CCABB255}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DA4A8D4-F80D-444A-9AA7-0756CCABB255}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7293E4A2-FF2A-42A2-988E-B12EE3ECFDBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7293E4A2-FF2A-42A2-988E-B12EE3ECFDBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CBC1200-966E-44D6-8FA6-9EB2497D548F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CBC1200-966E-44D6-8FA6-9EB2497D548F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3DA4A8D4-F80D-444A-9AA7-0756CCABB255} = {1154D2FE-F294-47FF-990A-53BE82A393F9}
+		{1154D2FE-F294-47FF-990A-53BE82A393F9} = {D332765A-9A61-437D-BFCD-D9436E4F0409}
+		{CE058F0F-7057-46A2-80C8-6B625C494E37} = {D332765A-9A61-437D-BFCD-D9436E4F0409}
+		{44B70031-4111-4919-8298-F6D1516CC21B} = {D332765A-9A61-437D-BFCD-D9436E4F0409}
+		{7293E4A2-FF2A-42A2-988E-B12EE3ECFDBB} = {44B70031-4111-4919-8298-F6D1516CC21B}
+		{8CBC1200-966E-44D6-8FA6-9EB2497D548F} = {CE058F0F-7057-46A2-80C8-6B625C494E37}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6D211E2A-6398-49FB-A3EE-36E859EABD5E}
+	EndGlobalSection
+EndGlobal

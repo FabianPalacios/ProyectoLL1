@@ -1,0 +1,67 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>3da4a8d4-f80d-444a-9aa7-0756ccabb255</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>Main.py</StartupFile>
+    <SearchPath>..\AccesoDeDatos\ConexionBD;..\LogicaNegocio\Implementacion</SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>LL1.GUI</Name>
+    <RootNamespace>LL1.GUI</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Main.py" />
+    <Compile Include="Vistas\Tabla.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Vistas\View.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Vistas\ViewConjPrediccion.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Vistas\ViewPrimeros.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Vistas\ViewRecursionIzq.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Vistas\ViewSiguientes.py">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Vistas\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AccesoDeDatos\AccesoDeDatos.pyproj">
+      <Name>AccesoDeDatos</Name>
+      <Project>{7293e4a2-ff2a-42a2-988e-b12ee3ecfdbb}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\LogicaNegocio\LogicaNegocio.pyproj">
+      <Name>LogicaNegocio</Name>
+      <Project>{8cbc1200-966e-44d6-8fa6-9eb2497d548f}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>

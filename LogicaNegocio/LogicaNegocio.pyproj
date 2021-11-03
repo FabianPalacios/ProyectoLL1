@@ -1,0 +1,57 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>8cbc1200-966e-44d6-8fa6-9eb2497d548f</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>
+    </StartupFile>
+    <SearchPath>Implementacion;..\AccesoDeDatos\ConexionBD</SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>LogicaNegocio</Name>
+    <RootNamespace>LogicaNegocio</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Implementacion\CargarArchivo\CargarArchivo.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Implementacion\Controladores\ConjuntoPrediccion.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Implementacion\Controladores\ControlGramatica.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Implementacion\Controladores\Primeros.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Implementacion\Controladores\RecursionIzquierda.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Implementacion\Controladores\Siguientes.py">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Implementacion\" />
+    <Folder Include="Implementacion\CargarArchivo\" />
+    <Folder Include="Implementacion\Controladores\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>

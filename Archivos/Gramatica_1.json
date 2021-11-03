@@ -1,0 +1,39 @@
+{
+  "noterminales": [
+    "A",
+    "P",
+    "D",
+    "C",
+    "S",
+    "R",
+    "W",
+    "Z",
+    "O"
+  ],
+  "terminales": [
+    "id",
+    ":",
+    "=",
+    "or",
+    "and",
+    "not",
+    "(",
+    ")",
+    "true",
+    "false",
+    "<",
+    ">",
+    "num"
+  ],
+  "gramatica": [
+    "A   ->  id:=P",
+    "P   ->  PorD|D",
+    "D   ->  DandC|C",
+    "C   ->  S|not(P)",
+    "S   ->  (P)|ORO|true|false",
+    "R   ->  <W|>Z|=",
+    "W   ->  =|>|@",
+    "Z   ->  =|@",
+    "O   ->  id|num"
+  ]
+}
