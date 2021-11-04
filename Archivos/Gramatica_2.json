@@ -1,0 +1,19 @@
+{
+  "noterminales": [
+    "E",
+    "T",
+    "F"
+  ],
+  "terminales": [
+    "+",
+    "*",
+    "(",
+    ")",
+    "i"
+  ],
+  "gramatica": [
+    "E ->  E+T|T",
+    "T ->  T*F|F",
+    "F -> id|(E)"
+  ]
+}

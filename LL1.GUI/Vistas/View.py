@@ -1,5 +1,6 @@
 from tkinter import *
 import tkinter as tk
+import os
 import pickle
 from tkinter import  messagebox as MessageBox
 
@@ -23,7 +24,7 @@ class View(object):
     conexion = GramaticaBD()
     
 
-    # Constructor de la ventana   
+    # Constructor de la ventana
     def __init__(self):
         self.ventana()
         
@@ -45,12 +46,12 @@ class View(object):
         self.textTerminales()
 
         self.botonesDesativados()
-
+        self.logo()
         self.view.mainloop()
 
-    #Metodo de diseño de la ventana 
+    #Metodo de diseño de la ventana
     def diseño(self):
-        self.view.title("Analisador LL1")
+        self.view.title("Analizador LL(1)")
         self.menuBar = Menu(self.view)
         self.view.config(menu=self.menuBar)
 
@@ -61,8 +62,20 @@ class View(object):
 
         posicion = str(ancho_ventana) + "x" + str(alto_ventana) + "+" + str(x_ventana) + "+" + str(y_ventana)
         self.view.geometry(posicion)
+        
         self.panel = Frame(self.view,width=500, height=350).pack()
     
+    #Logo y materia
+    def logo(self):
+        absolute_folder_path = os.path.dirname(os.path.realpath(__file__))
+        absolute_image_path = os.path.join(absolute_folder_path, 'logo2.png')
+        imagen = PhotoImage(file=absolute_image_path)
+        logo = Label(self.panel, image =imagen).place(x=0,y=0)
+        label_Materia = Label(self.panel,text="Estructura de lenguajes").place(x=370, y=3)
+        
+        self.view.mainloop()
+        
+
     # Definiendo las funciones que va a tener el menu Archivos
     def definirOpen(self):
         filemenu = Menu(self.menuBar,tearoff=0)
@@ -80,20 +93,20 @@ class View(object):
 
     # Area de texto para mostrar la gramatica
     def textAndInput(self):
-        label_1 = Label(self.panel,text="GRAMATICA: ").place(x=210, y=10)
-        self.textBox=Text(self.panel, height=10, width=30)
+        label_1 = Label(self.panel,text="GRAMATICA").place(x=210, y=10)
+        self.textBox = Text(self.panel, height=10, width=30)
         self.textBox.place(x=140, y=100)
         
     # Area de texto para los no terminales
     def textNoTerminales(self):               
         label_2 = Label(self.panel,text="No Terminales : ").place(x=125, y=33)
-        self.textBox1=Text(self.panel, height=1, width=20)
+        self.textBox1 = Text(self.panel, height=1, width=20)
         self.textBox1.place(x=225, y=35)
         
      # Area de texto para los no terminales
     def textTerminales(self):               
         label_3 = Label(self.panel,text="Terminales : ").place(x=125, y=60)
-        self.textBox2=Text(self.panel, height=1, width=20)
+        self.textBox2 = Text(self.panel, height=1, width=20)
         self.textBox2.place(x=225, y=63)
 
     # Area de texto para contador
@@ -104,7 +117,7 @@ class View(object):
         self.label = tk.Label(self.panel, textvariable=self.text).place(x=285, y=425)
 
 
-    # Todos los botones desativados 
+    # Todos los botones desativados
     def botonesDesativados(self):
         boton1 = Button(self.panel, text="Verificar", width=20,height=2, background="SkyBlue2",state=DISABLED).place(x=180,y=270)
         boton2 = Button(self.panel, text="Recursión Izquierda", width=20,height=2, background="SkyBlue2",state=DISABLED).place(x=180,y=320)
@@ -143,13 +156,13 @@ class View(object):
         self.archivo = self.data.abrirArchivo()
 
         for i in self.archivo["gramatica"]:
-            self.textBox.insert("insert",i+'\n')
+            self.textBox.insert("insert",i + '\n')
        
         for x in self.archivo["noterminales"]:
-            self.textBox1.insert("insert",x+" ")
+            self.textBox1.insert("insert",x + " ")
 
         for j in self.archivo["terminales"]:
-            self.textBox2.insert("insert",j+" ")
+            self.textBox2.insert("insert",j + " ")
         
         self.textBox.configure(state='disabled')
         self.textBox1.configure(state='disabled')
@@ -159,7 +172,7 @@ class View(object):
         
     
 
-    # Verificar si la gramatica  es LL1
+    # Verificar si la gramatica es LL1
     def verificarGramatica(self):
         self.controlTotal = ControlGramatica(self.archivo["gramatica"], self.archivo["terminales"])
         respuesta = self.controlTotal.resultado
@@ -208,7 +221,8 @@ class View(object):
     
     #  Guardar en la base de datos
     def guardar(self):
-        self.controlTotal.guardar()      
+        self.controlTotal.guardar()
+        info2 = MessageBox.showinfo("Guardar","La información ha sido almacenada correctamente.")
         
     # Vista de la Tabla
     def listar(self):
