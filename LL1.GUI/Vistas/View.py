@@ -14,28 +14,31 @@ from Vistas.Tabla import Tabla
 from Vistas.ViewSiguientes import ViewSiguientes
 from Vistas.ViewConjPrediccion import ViewConjPrediccion
 
-
-
+#Acceso Datos
+from GramaticaBD import GramaticaBD
 
 class View(object):
     #Instancia de la clase CargarArchivo
     data = CargarArchivo()
+    conexion = GramaticaBD()
     
 
     # Constructor de la ventana   
     def __init__(self):
         self.ventana()
         
+        
     # Metodo que crea una ventana e inserta un panel de trabajo
     def ventana(self):
         self.view = Tk()
         self.diseño() 
         
-        #self.con = self.conexion.sql_conexion()
-        #self.conexion.sql_table(self.con)
+        self.con = self.conexion.sql_conexion()
+        self.cont = 0
         
         self.definirOpen()
         self.definirList()
+        self.textContador()
 
         self.textAndInput()
         self.textNoTerminales()
@@ -92,6 +95,14 @@ class View(object):
         label_3 = Label(self.panel,text="Terminales : ").place(x=125, y=60)
         self.textBox2=Text(self.panel, height=1, width=20)
         self.textBox2.place(x=225, y=63)
+
+    # Area de texto para contador
+    def textContador(self):               
+        label_4 = Label(self.panel,text="CONTADOR : ").place(x=205, y=425)
+        self.text = tk.StringVar()
+        self.text.set("0")
+        self.label = tk.Label(self.panel, textvariable=self.text).place(x=285, y=425)
+
 
     # Todos los botones desativados 
     def botonesDesativados(self):
@@ -164,6 +175,9 @@ class View(object):
                     self.botonSiguientes()
                     self.botonConjuntoPrediccion()
 
+                    
+                    self.cont += 1
+                    self.text.set(self.cont)
                 if(respuesta):
                     info2 = MessageBox.showinfo("Verificación","Esta gramática es compatible para un analizador LL1")
                 else:
@@ -198,7 +212,7 @@ class View(object):
         
     # Vista de la Tabla
     def listar(self):
-        rows = self.controlTotal.listarBD()
+        rows = self.conexion.sql_fetch(self.con)
         Tabla(rows)
 
 

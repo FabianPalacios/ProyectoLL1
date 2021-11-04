@@ -21,8 +21,8 @@ class Tabla(object):
     def diseño(self):
         self.view.title("LISTA")
         
-        ancho_ventana = 1000
-        alto_ventana = 250
+        ancho_ventana = 1605
+        alto_ventana = 240
         x_ventana = self.view.winfo_screenwidth() // 2 - ancho_ventana // 2
         y_ventana = self.view.winfo_screenheight() // 2 - alto_ventana // 2
 
@@ -34,17 +34,20 @@ class Tabla(object):
     def accionarPrim(self):
         rows = self.gramatica
 
-        columns = ('#1', '#2', '#3','#4', '#5')
+        columns = ('#1', '#2', '#3','#4', '#5', '#6', '#7', '#8')
         
         self.treeview = ttk.Treeview(self.view, columns=columns,show='headings')
         self.treeview.pack()
 
         # Añadimos encabezados
-        self.treeview.heading("#1", text="No Terminales")
-        self.treeview.heading("#2", text="Terminales")
-        self.treeview.heading("#3", text="Gramatica")
-        self.treeview.heading("#4", text="Recursión Izquierda")
-        self.treeview.heading("#5", text="Prim")
+        self.treeview.heading("#1", text="Id")
+        self.treeview.heading("#2", text="No Terminales")
+        self.treeview.heading("#3", text="Terminales")
+        self.treeview.heading("#4", text="Gramatica")
+        self.treeview.heading("#5", text="Recursión Izquierda")
+        self.treeview.heading("#6", text="Prim")
+        self.treeview.heading("#7", text="Siguiente")
+        self.treeview.heading("#8", text="ConjPrediccion")
 
         for i in rows:
             self.treeview.insert("", tk.END,  values = i)

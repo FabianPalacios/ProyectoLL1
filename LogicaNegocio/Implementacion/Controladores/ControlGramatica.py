@@ -70,6 +70,3 @@ class ControlGramatica(object):
         entities = (str(self.noTerminales),str(self.terminales), str(self.gramLimpia), str(self.gramRecursionIzq),str(self.prim),str(self.sig),str(self.predic))
         self.conexion.sql_insert(self.con, entities)
 
-    def listarBD(self):
-        rows = self.conexion.sql_fetch(self.con)
-        return rows

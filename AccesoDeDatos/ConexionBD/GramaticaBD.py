@@ -16,7 +16,7 @@ class GramaticaBD:
        try :
            cursorObj = con.cursor()
 
-           cursorObj.execute("CREATE TABLE gramaticas(noterminales text, terminales text, gramatica text, RecursionIzq text, primeros text, siguientes text, prediccion text)")
+           cursorObj.execute("CREATE TABLE gramaticas(id INTEGER PRIMARY KEY AUTOINCREMENT,noterminales text, terminales text, gramatica text, RecursionIzq text, primeros text, siguientes text, prediccion text)")
 
            con.commit()
        except sqlite3.OperationalError:
