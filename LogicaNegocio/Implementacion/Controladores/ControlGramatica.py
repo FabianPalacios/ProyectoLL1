@@ -59,7 +59,7 @@ class ControlGramatica(object):
         for i in lista:
             #Separa por palabra ['E','->','AT/@']
             palabras = i.split()
-            #Separa por / o | = ['T','@']
+            #Separa por | = ['T','@']
             produciones = palabras[2].split('|')
             #Arma el diccionario
             gramaticas[palabras[0]] = produciones

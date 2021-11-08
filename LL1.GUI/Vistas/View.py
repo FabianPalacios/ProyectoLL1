@@ -68,7 +68,7 @@ class View(object):
     #Logo y materia
     def logo(self):
         absolute_folder_path = os.path.dirname(os.path.realpath(__file__))
-        absolute_image_path = os.path.join(absolute_folder_path, 'logo2.png')
+        absolute_image_path = os.path.join(absolute_folder_path, 'logo3.png')
         imagen = PhotoImage(file=absolute_image_path)
         logo = Label(self.panel, image =imagen).place(x=0,y=0)
         label_Materia = Label(self.panel,text="Estructura de lenguajes").place(x=370, y=3)
