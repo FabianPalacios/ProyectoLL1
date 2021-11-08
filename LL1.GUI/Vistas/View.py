@@ -203,7 +203,7 @@ class View(object):
                 
 
         else: 
-            resultado = MessageBox.askquestion("Verificación LL1", "La gramatica es LL1, ¿Desea continuar?")
+            resultado = MessageBox.askquestion("Verificación LL1", "La gramatica esta en LL1, ¿Desea continuar?")
 
             if(resultado == "yes"):
                 self.botonPrimeros()
