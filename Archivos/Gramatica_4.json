@@ -1,0 +1,17 @@
+{
+  "noterminales": [
+    "E",
+    "B",
+    "A"
+  ],
+  "terminales": [
+    "x",
+    "y",
+    "b"
+  ],
+  "gramatica": [
+    "E -> Ex|yB|yA",
+    "B -> bA|bbA",
+    "A -> @"
+  ]
+}

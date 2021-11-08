@@ -1,0 +1,20 @@
+{
+  "noterminales": [
+    "S",
+    "A",
+    "C",
+    "B"
+  ],
+  "terminales": [
+    "a",
+    "x",
+    "(",
+    ")"
+  ],
+  "gramatica": [
+    "S -> (A)",
+    "A -> aCB",
+    "C -> aA|@",
+    "B -> x|S"
+  ]
+}

@@ -153,6 +153,10 @@ class View(object):
 
     # Realizar la carga del archivo
     def accionarCargarArchivo(self):
+        self.textTerminales()
+        self.textNoTerminales()
+        self.textAndInput()
+
         self.archivo = self.data.abrirArchivo()
 
         for i in self.archivo["gramatica"]:
@@ -191,6 +195,7 @@ class View(object):
                     
                     self.cont += 1
                     self.text.set(self.cont)
+
                 if(respuesta):
                     info2 = MessageBox.showinfo("Verificación","Esta gramática es compatible para un analizador LL1")
                 else:
@@ -202,6 +207,14 @@ class View(object):
 
             if(resultado == "yes"):
                 self.botonPrimeros()
+                self.botonSiguientes()
+                self.botonConjuntoPrediccion()
+
+                if(respuesta):
+                    info2 = MessageBox.showinfo("Verificación","Esta gramática es compatible para un analizador LL1")
+                else:
+                    info3 = MessageBox.showinfo("Verificación","Esta gramática NO es compatible para un analizador LL1")
+
 
    # Vista de la ventana recursión Izquierda
     def viewRecursionIzquierda(self):
